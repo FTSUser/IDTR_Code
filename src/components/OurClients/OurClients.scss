@@ -1,0 +1,33 @@
+@import "../../styles/mixins/typography.scss";
+@import "../../styles/mixins/breakpoint.scss";
+@import "../../styles/mixins/color.scss";
+@import "../../styles/mixins/global.scss";
+@import "../../styles/mixins/font.scss";
+
+.our-clients-section-alignment {
+    padding: 60px 0;
+    .page-title {
+        h1 {
+            @include heading-2;
+            font-family: "Helvetica";
+            font-weight: bold;
+            color: $black;
+        }
+    }
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-bottom: 30px;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    .clients-grid-items {
+        img {
+            width: 90px;
+            cursor: pointer;
+            object-fit: cover;
+        }
+    }
+}

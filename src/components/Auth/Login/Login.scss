@@ -1,0 +1,116 @@
+@import "../../../styles/mixins/breakpoint.scss";
+@import "../../../styles/mixins/color.scss";
+@import "../../../styles/mixins/font.scss";
+@import "../../../styles/mixins/global.scss";
+@import "../../../styles/mixins/typography.scss";
+.align {
+    text-align: center !important;
+    padding: 10px 0;
+    span {
+        width: 100%;
+        text-align: center !important;
+    }
+    p {
+        text-align: center;
+        .otpmsg {
+            text-decoration: underline;
+            cursor: pointer;
+            color: blue;
+        }
+    }
+}
+.login-section-alignment {
+    padding: 60px 0;
+    .login-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        justify-content: space-between;
+        @include breakpoint("max-sm") {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0;
+        }
+        .login-grid-items:nth-child(2) {
+            padding: 0 80px;
+            display: flex;
+            align-items: center;
+            @include breakpoint("max-md") {
+                padding: 0 40px;
+            }
+            @include breakpoint("max-sm") {
+                padding: 40px;
+            }
+            div {
+                width: 100%;
+            }
+            .submit-otp {
+                padding: 20px 0 0 0;
+                button {
+                    background-color: $red;
+                    width: 100%;
+                    height: 40px;
+                    color: $white;
+                    @include text;
+                    letter-spacing: 1px;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 4px;
+                }
+            }
+            .login-form-control {
+                padding-bottom: 20px;
+
+                label {
+                    @include text-sm;
+                    color: $gray;
+                    padding-bottom: 4px;
+                    display: block;
+                    letter-spacing: 1px;
+                }
+                input {
+                    width: -webkit-fill-available;
+                    height: 40px;
+                    border: 1px solid $border-color-2;
+                    border-radius: 4px;
+                    padding: 0 1rem;
+                    @include text-sm;
+                    color: $black-3;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                ::placeholder {
+                    letter-spacing: 1px;
+                }
+            }
+            .login-title {
+                padding-bottom: 30px;
+                h1 {
+                    @include heading-2;
+                    color: $black-3;
+                    font-family: "Helvetica";
+                    font-weight: 400;
+                    margin: 0;
+                    letter-spacing: 1px;
+                    @include breakpoint("max-sm") {
+                        @include heading-3;
+                    }
+                }
+            }
+        }
+        .login-grid-items {
+            background: rgba(204, 0, 1, 0.04);
+            img {
+                width: 100%;
+                height: 420px;
+                object-fit: cover;
+                @include breakpoint("max-sm") {
+                    height: 350px;
+                }
+            }
+        }
+    }
+}
+.w-100 {
+    width: 100%;
+}

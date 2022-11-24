@@ -1,0 +1,277 @@
+@import "../../../styles/mixins/breakpoint.scss";
+@import "../../../styles/mixins/color.scss";
+@import "../../../styles/mixins/font.scss";
+@import "../../../styles/mixins/global.scss";
+@import "../../../styles/mixins/typography.scss";
+
+.motorcycles-coirses-banner::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+.motorcycles-coirses-banner {
+    background-image: url("../../../Assets/Images/22.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-position: center center;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .courses-title {
+        @include breakpoint("max-md") {
+            padding: 0 40px;
+        }
+        @include breakpoint("max-md") {
+            padding: 0 20px;
+        }
+        h1 {
+            @include heading-2;
+            color: $white;
+            position: relative;
+            margin: 0;
+            @include breakpoint("max-sm") {
+                @include heading-3;
+            }
+        }
+    }
+}
+
+.mototcard-courses-alignment {
+    background-image: url("../../../Assets/Images/courses\ page.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    // background-position: center center;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .courses-title {
+        h1 {
+            @include heading-3;
+            color: $white;
+            position: relative;
+            margin: 0;
+        }
+    }
+}
+
+.mototcard-courses-alignment::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+
+.title-text {
+    margin-bottom: 60px;
+    @include breakpoint("max-sm") {
+        margin-bottom: 40px;
+    }
+    h1 {
+        @include heading-2;
+        font-family: "Helvetica";
+        font-weight: 400;
+        color: $black;
+        margin: 0;
+        letter-spacing: 1px;
+    }
+}
+
+.breadcrumbs-section-alignment {
+    padding: 60px 0;
+    .breadcrumbs-align {
+        span {
+            padding-right: 5px;
+            @include text-sm;
+            letter-spacing: 1px;
+            color: $gray;
+            cursor: pointer;
+        }
+        .active {
+            color: $red;
+        }
+    }
+}
+
+.part-view-alignment {
+    .part-grid {
+        display: grid;
+        grid-template-columns: 310px 1fr;
+        gap: 0 100px;
+        @include breakpoint("max-md") {
+            gap: 0 20px;
+            grid-template-columns: 280px 1fr;
+            padding: 0 20px;
+        }
+        @include breakpoint("max-sm") {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 40px 0;
+            padding: 0 20px;
+        }
+        .part-grid-items {
+            .sidebar-tab-design {
+                border-left: 1px solid $red;
+                position: sticky;
+                top: 60px;
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    padding-left: 1rem;
+
+                    li {
+                        margin-bottom: 1.25rem;
+                        @include text;
+                        position: relative;
+                        cursor: pointer;
+                        color: $gray;
+                        transition: 0.3s ease-in-out;
+                        @include breakpoint("max-sm") {
+                            white-space: nowrap;
+                            margin-right: 1rem;
+                        }
+                        &:hover {
+                            color: $red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidebar-tab-design ul li::after {
+    content: "";
+    position: absolute;
+    border-left: 3px solid $red;
+    height: 100%;
+    width: 3px;
+    left: -17px;
+    background-color: $red;
+    transform: scaleY(0);
+    transform-origin: left;
+    opacity: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.sidebar-tab-design ul li:hover::after {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.active-right-side-tab::before {
+    content: "";
+    position: absolute;
+    border-left: 3px solid $red;
+    height: 100%;
+    width: 3px;
+    left: -17px;
+    background-color: $red;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.tab-title {
+    padding-bottom: 1.85rem;
+    h1 {
+        @include heading-3;
+        color: $black-3;
+        margin: 0 0 1.85rem 0;
+        font-family: "Helvetica";
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        padding-left: 1.25rem;
+        li {
+            @include text;
+            color: $gray;
+            letter-spacing: 0.5px;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+.timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 80px;
+    justify-content: space-between;
+    @include breakpoint("max-md") {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px 0;
+    }
+    @include breakpoint("max-sm") {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px 0;
+    }
+    .timeline-grid-items {
+    }
+}
+.listheading {
+    @include heading-3;
+    color: $black-3;
+    margin: 0 0 .85rem 0;
+    font-family: "Helvetica";
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-weight: bold !important;
+}
+.listheading1 {
+    @include text-md;
+    color: $black-3;
+    margin: 0 0 1.85rem 0;
+    font-family: "Helvetica";
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-weight: bold !important;
+}
+
+.listP {
+    @include text-md;
+    font-size: 18px;
+    line-height: 23px;
+    padding: 6px 0;
+    color: $black-3;
+    margin: 0;
+    @include breakpoint("max-md") {
+        @include text;
+        line-height: 22px;
+    }
+    span {
+        font-weight: bold;
+        margin-right: 20px;
+    }
+}
+.button-end-side {
+    background-color: $red;
+    min-width: 143px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    padding: 5px 10px;
+    margin-top: 30px;
+    @include text;
+    cursor: pointer;
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+}
+.mr-3{
+    margin-right: 10px;
+}

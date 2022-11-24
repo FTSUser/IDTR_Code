@@ -1,0 +1,509 @@
+@import "../../styles/mixins/typography.scss";
+@import "../../styles/mixins/breakpoint.scss";
+@import "../../styles/mixins/color.scss";
+@import "../../styles/mixins/font.scss";
+@import "../../styles/mixins/global.scss";
+
+.account-section-alignment {
+  padding: 60px 0;
+  @include breakpoint("max-sm") {
+    padding: 60px 20px;
+  }
+  h1 {
+    @include heading-2;
+    color: $black-3;
+    font-family: "Helvetica";
+    font-weight: 400;
+    margin: 0 0 0px 0;
+    span {
+      color: $gray;
+    }
+    @include breakpoint("max-sm") {
+      @include heading-3;
+    }
+  }
+  h3 {
+    @include heading-3;
+    color: $black-3;
+    font-family: "Helvetica";
+    font-weight: 400;
+
+    span {
+      color: $gray;
+    }
+    @include breakpoint("max-sm") {
+      @include heading-3;
+    }
+  }
+  button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: $red;
+    color: $white;
+    @include text;
+    letter-spacing: 1px;
+    line-height: 31px;
+
+    margin: auto;
+    margin-top: 15px;
+    cursor: pointer;
+    height: 50px;
+    border: none;
+    @include breakpoint("max-sm") {
+      width: 100%;
+    }
+  }
+}
+.d-flex {
+  display: flex;
+}
+.center {
+  justify-content: center;
+}
+.margin {
+  margin-bottom: 0 !important;
+}
+.ml3 {
+  margin-right: 30px;
+}
+.text-center {
+  text-align: center;
+}
+.cancel-booking {
+  margin-right: 10px;
+  padding: 6px 20px;
+  border-radius: 4px;
+  background-color: #cc0001;
+  color: #fff;
+  font-size: 16px;
+  line-height: 21px;
+  font-family: "Helvetica";
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 31px;
+
+  margin-top: 15px;
+  cursor: pointer;
+  height: auto;
+  width: max-content;
+  border: none;
+}
+.top {
+  margin-top: 40px !important;
+  padding-top: 40px;
+}
+.hocers:hover {
+  border-bottom: 2px solid;
+  font-weight: bold;
+  color: blue !important;
+}
+.pwdphoto {
+  height: 150px !important;
+  width: 150px !important;
+  object-fit: contain !important;
+}
+.pdf-button {
+  height: 40px !important;
+  line-height: 20px !important;
+}
+.registration-box-details {
+  margin: 3rem 0 0 0;
+  border: 1px solid $border-color-2;
+  padding: 30px;
+  border-radius: 4px;
+  @include breakpoint("max-sm") {
+    padding: 20px;
+  }
+  h1 {
+    @include heading-3;
+    color: $black-3;
+    font-family: "Helvetica";
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+  }
+}
+
+.booking-grid-cus {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  @include breakpoint("max-md") {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+  }
+  .card {
+    background: rgba(204, 0, 1, 0.04);
+    padding: 20px;
+    .booking-text-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px 20px;
+      @include breakpoint("max-sm") {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .booking-text-grid-items {
+        img {
+          width: 100%;
+        }
+      }
+      p {
+        @include text-sm;
+        font-weight: 500;
+        color: #757575;
+        margin: 0 0 0px 0;
+      }
+      span,
+      a {
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+        @include text-sm;
+        color: $black-3;
+      }
+    }
+  }
+}
+.black {
+  font-weight: 600;
+  @include text-sm;
+  color: $black-3;
+}
+.gray {
+  @include text-sm;
+  font-weight: 500;
+  color: #757575;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.booking-text-grid1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 60px;
+  padding: 10px 0 0 0;
+  .booking-text-grid-items {
+    p {
+      font-size: 20px;
+    }
+    img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+  }
+}
+
+.invoice-box {
+  // display: none;
+  max-width: 800px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  color: #555;
+}
+
+.invoice-box table {
+  width: 100%;
+  line-height: inherit;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.invoice-box table td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(2) {
+  text-align: right;
+}
+
+.invoice-box table tr.top table td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.top table td.title {
+  font-size: 45px;
+  line-height: 45px;
+  color: #333;
+}
+
+.invoice-box table tr.information table td {
+  padding-bottom: 40px;
+}
+
+.invoice-box table tr.heading td {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+  padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td {
+  border-bottom: 1px solid #eee;
+}
+
+.invoice-box table tr.item.last td {
+  border-bottom: none;
+}
+.center-button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.invoice-box table tr.total td:nth-child(2) {
+  border-top: 2px solid #eee;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .invoice-box table tr.top table td {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .invoice-box table tr.information table td {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+.invoice-button {
+  padding: 20px 0;
+}
+
+
+
+.certificate-box-center-alignment {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-box {
+  width: 900px;
+  background-image: url("https://i.ibb.co/nmw8264/IDTR-Certificate-1.png");
+  background-repeat: no-repeat;
+  min-height: 600px;
+  padding: 60px;
+  background-size: contain;
+}
+
+.sl-no-box-alignment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sl-no-box-alignment div label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #323232;
+
+}
+
+input:focus {
+  outline: none;
+}
+
+.sl-no-box-alignment div input {
+  border: none;
+  border-bottom: 1px solid #010101;
+  font-size: 14px;
+  width: 100px;
+  color: #505050;
+}
+
+
+.header-alignment {
+  display: flex;
+  align-items: center;
+  padding: 10px 0 0 0;
+  justify-content: space-between;
+}
+
+.header-alignment div:last-child img {
+  max-width: 60px;
+}
+
+.header-alignment div:first-child img {
+
+  max-width: 120px;
+}
+
+
+.header-alignment div h1 {
+  padding: 5px 20px;
+  border-radius: 9999px;
+  /* background-color: #cc0001; */
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  width: fit-content;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+.header-alignment p {
+  font-size: 14px;
+  margin: 10px 0;
+  font-weight: 500;
+  color: #101010;
+  text-align: center;
+}
+
+.header-alignment span {
+  font-size: 12px;
+  text-align: center;
+  color: #010101;
+  font-weight: 500;
+  display: block;
+}
+
+.drivers-certificate-text h2 {
+  font-size: 25px;
+  line-height: 30px;
+  color: #cc0001;
+  font-weight: 600;
+  text-align: center;
+}
+
+.drivers-certificate-text {
+  padding: 10px 0;
+}
+
+.drivers-certificate-text span {
+  font-size: 14px;
+  color: #010101;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  padding: 0 0 5px 0;
+}
+.drivers-certificate-text p {
+  font-size: 14px;
+  color: #010101;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+}
+
+.first-row-alignment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0 15px 0;
+}
+
+.sec-row-alignment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sec-row-alignment div input {
+  width: 150px;
+}
+.three-row-alignment {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  justify-content: space-between;
+}
+
+.three-row-alignment .sl-no-box-alignment:first-child div input {
+  width: 290px;
+}
+.three-row-alignment .sl-no-box-alignment:last-child div input {
+  width: 190px;
+}
+
+.fourth-row-alignment .sl-no-box-alignment:first-child div input {
+  width: 220px;
+}
+.fifth-row-alignment .sl-no-box-alignment:first-child div input {
+  width: 210px;
+}
+
+.fourth-row-alignment {
+  display: flex;
+  align-items: center;
+}
+
+.fifth-row-alignment {
+  display: flex;
+  padding: 15px 0;
+  align-items: center;
+}
+
+.six-row-alignment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.six-row-alignment .sl-no-box-alignment:first-child div input {
+  width: 178px;
+}
+
+.footer-content-alignment {
+  padding: 20px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-content-alignment .sl-no-box-alignment label {
+  display: block;
+  padding: 5px 0 0 0;
+  text-align: center;
+}
+
+.photographer-printed-class {
+  border: 1px solid #010101;
+  width: 60px;
+  height: 60px;
+}
+
+
+
+.box-title h1 {
+  font-size: 20px;
+  line-height: 30px;
+  color: #cc0001;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+
+.box-title p {
+  font-size: 16px;
+  color: #010101;
+  margin: 0 0 20px 0;
+  font-weight: 600;
+}
+.box-title span{
+  font-size: 16px;
+  color: #010101;
+  font-weight: 600;
+}
+
+.box-title {
+  padding: 0 0 20px 0;
+}
+
+.content-text-style span {
+  font-size: 16px;
+  color: #000;
+  font-weight: 600;
+  display: block;
+}

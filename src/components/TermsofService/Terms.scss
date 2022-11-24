@@ -1,0 +1,28 @@
+@import "../../styles/mixins/index.scss";
+@import "../../styles/mixins/breakpoint.scss";
+@import "../../styles/mixins/color.scss";
+@import "../../styles/mixins/typography.scss";
+@import "../../styles/mixins/global.scss";
+
+.page-layout-alignment {
+    padding: 60px 0;
+    .page-title {
+        h1 {
+            @include heading-2;
+            color: $black;
+        }
+    }
+    .grid {
+        padding: 0 120px;
+        .grid-items {
+            .child-text-alignment {
+                p {
+                    @include text;
+                    color: $gray;
+                    line-height: 29px;
+                    margin: 0 0 1rem 0;
+                }
+            }
+        }
+    }
+}

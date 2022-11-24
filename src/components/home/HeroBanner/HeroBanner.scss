@@ -1,0 +1,312 @@
+@import "../../../styles/mixins/breakpoint.scss";
+@import "../../../styles/mixins/color.scss";
+@import "../../../styles/mixins/font.scss";
+@import "../../../styles/mixins/global.scss";
+@import "../../../styles/mixins/typography.scss";
+
+.hero-banner-light {
+  background-color: $light-background;
+  margin: 20px 0 0px 0;
+  padding: 10px 0;
+  h1 {
+    @include heading-3;
+    color: $black-3;
+    text-align: center;
+    @include breakpoint("max-md") {
+      @include text-md;
+      font-weight: 600;
+    }
+    @include breakpoint("max-sm") {
+      @include text;
+      font-weight: 600;
+      line-height: 26px;
+    }
+  }
+}
+.text-center {
+  text-align: center;
+}
+.hero-banner {
+  background-image: url("../../../Assets/Images/hero-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 480px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.slider-image {
+  width: 100%;
+  position: relative;
+  img {
+    width: 100%;
+    height: calc(100vh - 254px);
+  }
+}
+.slide-design {
+  .awssld__content {
+    display: inline !important;
+  }
+}
+.register-button-end-side {
+  position: absolute;
+  /* top: 0; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-items: end;
+  justify-content: center;
+  /* margin-bottom: 2rem; */
+  bottom: 60px;
+  button {
+    background-color: $red;
+    min-width: 183px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: $white;
+    padding: 5px 10px;
+    @include text-md;
+    cursor: pointer;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+.hero-banner::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.41) 100%);
+  width: 100%;
+  height: 100%;
+}
+
+.slide-design {
+  .awssld__content {
+    height: auto !important;
+    background-color: transparent;
+  }
+  .awssld__controls button {
+    // top: 21% !important;
+  }
+  .awssld__container {
+    padding-bottom: 39% !important;
+  }
+  .awssld__controls__arrow-left:before,
+  .awssld__controls__arrow-left:after,
+  .awssld__controls__arrow-right:before,
+  .awssld__controls__arrow-right:after {
+    background-color: #fff !important;
+    z-index: 9999;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 1400px) {
+  .new-header {
+    padding: 0 40px !important;
+  }
+  .sub-header-show
+    .sub-header-grid
+    .sub-header-grid-items
+    .sub-header-left-right-alignment
+    .all-skew-alignment
+    .message-align-sub-header
+    span {
+    font-size: 14px !important;
+  }
+}
+.mb-10 {
+  margin-bottom: 20px;
+}
+.dummy-text-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0 60px;
+  padding: 20px 0;
+  word-break: break-all;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  @include breakpoint("max-md") {
+    padding: 60px 40px;
+  }
+  @include breakpoint("max-sm") {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    padding: 60px 20px;
+  }
+  .dummy-text-grid-items {
+    h1 {
+      @include heading-2;
+      color: $black-3;
+      font-size: 32px;
+      text-align: center;
+      line-height: 38px;
+      font-family: "Helvetica-Bold";
+      font-weight: 700;
+      margin: 0;
+      @include breakpoint("max-md") {
+        @include heading-3;
+        text-align: left;
+        margin: 0 0 1rem 0;
+        line-height: 35px;
+      }
+      @include breakpoint("max-sm") {
+        @include heading-3;
+        text-align: left;
+        margin: 0 0 1rem 0;
+      }
+    }
+    p {
+      @include text;
+      color: $gray;
+      margin: 0;
+      text-align: center !important;
+      line-height: 26px;
+      word-break: break-word;
+    }
+  }
+}
+
+.marqq-section-alignment {
+  .grid {
+    display: grid;
+    grid-template-columns: 350px 1fr 200px;
+    justify-content: space-between;
+    gap: 0;
+    height: 60px;
+    @include breakpoint("max-md") {
+      grid-template-columns: 250px 1fr 200px;
+    }
+    @include breakpoint("max-sm") {
+      grid-template-columns: 150px 1fr;
+    }
+    .grid-items:nth-child(2) {
+      background-color: #e5e0e0;
+    }
+    .grid-items:nth-child(3) {
+      @include breakpoint("max-sm") {
+        display: none;
+      }
+    }
+    .grid-items {
+      h3 {
+        @include heading-3;
+        color: $white;
+        position: relative;
+        margin: 0;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 1rem;
+        text-align: right;
+        cursor: pointer;
+        @include breakpoint("max-sm") {
+          font-size: 15px;
+          padding-right: 10px;
+        }
+      }
+    }
+    .grid-items:nth-child(1) {
+      position: relative;
+
+      width: 100%;
+      background-color: $red;
+    }
+    .grid-items:last-child {
+      position: relative;
+
+      width: 100%;
+      background-color: $red;
+    }
+    .grid-items-right-curve::before {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: #cc0001;
+      transform-origin: bottom right;
+      transform: skew(-30deg, 0deg);
+    }
+    .more-infor {
+      h1 {
+        color: #fff;
+      }
+    }
+    .grid-items-left-curve::before {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #cc0001;
+      transform-origin: bottom right;
+      transform: skew(30deg, 0deg);
+    }
+    .marquee-flex {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      .marquee-box {
+        padding: 0 20px;
+        // width: 400px;
+        // max-width: 400px;
+        // min-width: 400px;
+        p {
+          @include text;
+          margin: 0 0 5px 0;
+          color: $red;
+        }
+        .date-alignment {
+          display: flex;
+          align-items: center;
+          i {
+            color: $red;
+          }
+          span {
+            @include text-sm;
+            color: $red;
+            padding-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.mobile-view-show-button {
+  display: none;
+  @include breakpoint("max-sm") {
+    display: block;
+  }
+}
+.mobile-view-more-information {
+  padding: 40px 0 40px 0;
+  display: flex;
+  justify-content: center;
+  button {
+    padding: 8px 16px;
+    background-color: $red;
+    color: $white;
+    @include text;
+    height: 45px;
+    min-width: 160px;
+    border-radius: 4px;
+    border: none;
+  }
+}

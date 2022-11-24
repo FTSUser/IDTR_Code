@@ -1,0 +1,464 @@
+@import "../../styles/mixins/typography.scss";
+@import "../../styles/mixins/breakpoint.scss";
+@import "../../styles/mixins/color.scss";
+@import "../../styles/mixins/global.scss";
+@import "../../styles/mixins/typography.scss";
+
+.asked-question-banner {
+    width: 100%;
+    height: 150px;
+    background: rgba(204, 0, 1, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .page-title {
+        h1 {
+            @include heading-2;
+            color: $black;
+            font-family: "Helvetica";
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+    }
+}
+
+.faq-alignment-question {
+    padding: 80px 0;
+    .main-question {
+        border: 1px dashed $border-color-2;
+        border-left: 3px solid $red;
+        margin-bottom: 20px;
+        .answer-hidden {
+            max-height: 0px;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+        }
+        .answer-show {
+            max-height: 100vh;
+            transition: 0.3s ease-in-out;
+        }
+        .answer-child-text-alignment {
+            padding: 0 20px;
+            h2 {
+                @include text;
+                color: $black;
+                margin: 0 0 1rem 0;
+            }
+            p {
+                @include text-sm;
+                color: $gray;
+                margin: 0 0 1rem 0;
+            }
+        }
+        .question-grid {
+            display: grid;
+            cursor: pointer;
+            grid-template-columns: 1fr 25px;
+            gap: 0 20px;
+            align-items: center;
+            padding: 20px;
+            justify-content: space-between;
+            .question-grid-items:last-child {
+                display: flex;
+                justify-content: flex-end;
+            }
+            .question-grid-items {
+                i {
+                    color: $red;
+                    cursor: pointer;
+                    font-size: 20px;
+                    transition: 0.3s ease-in-out;
+                }
+                p {
+                    margin: 0;
+                    @include heading-4;
+                    color: $black;
+                    font-family: "Helvetica";
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+.faq-banner::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    content: "";
+}
+.faq-page-alignment {
+    padding-top: 90px;
+    .faq-banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 0;
+        // background-color: $background;
+        // background-image: url("../../Assets/Images/faq.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center center;
+        width: 100%;
+        position: relative;
+        height: 250px;
+        @include breakpoint("max-sm") {
+            height: auto;
+            background-position: inherit;
+            padding: 60px 0;
+            background-size: cover;
+        }
+        .page-title{
+            position: relative;
+            h1 {
+                @include heading-2;
+                margin: 0 0 1.85rem 0;
+                color: $white;
+                text-align: center;
+                font-family: "Prata-Regular";
+            }
+            div {
+                display: flex;
+                justify-content: center;
+            }
+            p {
+                @include text-md;
+                line-height: 28px;
+                color: $white;
+                font-family: "Gotham-Light_1";
+                font-weight: 500;
+                text-align: center;
+                @include breakpoint("max-sm") {
+                    @include text-sm;
+                    line-height: 22px;
+                }
+            }
+        }
+    }
+}
+
+.faq-top-bar{
+    background-color: #cacaca;
+    height: 80px;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    @include breakpoint("max-sm") {
+        display: none;
+    }
+    .faq-list {
+        nav {
+            ul {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                margin: 0 0 0 0;
+                li {
+                    @include text-md;
+                    cursor: pointer;
+                    color: $black;
+                    font-family: "Gotham-Book_0";
+                    position: relative;
+                    margin-right: 40px;
+                }
+            }
+        }
+    }
+}
+
+.faq-list ul li::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    bottom: -27px;
+    left: 0;
+    background-color: $red;
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+    transition: transform .3s ease-out,opacity .3s ease-out;
+}
+
+.faq-list ul li:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+
+.faq-list-grid {
+    display: grid;
+    grid-template-columns: minmax(0 , 1fr) 35px;
+    gap: 0 20px;
+    align-content: center;
+    .faq-list-grid-items {
+        h2 {
+            @include heading-4;
+            // font-family: "Gotham-Book_0";
+            color: $black;
+            margin: 0;
+            font-weight: 600;
+            @include breakpoint("max-sm") {
+                @include text-md;
+            }
+        }
+        h3 {
+            @include heading-4;
+            // font-family: "Gotham-Book_0";
+            color: #323232;
+            margin: 0;
+            font-weight: 500;
+            @include breakpoint("max-sm") {
+                @include text-md;
+            }
+        }
+        .icon-design {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid $red;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+                @include text-md;
+                font-weight: 600;
+                position: relative;
+                left: 1px;
+                top: -1px;
+                color: $red;
+                font-size: 25px;
+                display: block;
+            }
+        }
+    }
+}
+
+.text-hidden {
+    max-height: 0px;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+}
+
+.text-show {
+    // max-height: calc(100vh - 450px);
+    transition: .3s ease-in-out;
+}
+
+
+.faq-text-style {
+    p {
+        @include text;
+        line-height: 28px;
+        color: #777;
+       
+        @include breakpoint("max-sm") {
+            @include text-sm;
+            line-height: 20px;
+        }
+    }
+}
+
+.faq-border-bottom {
+    padding: 20px 0;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.near-by-properties {
+    padding: 60px 0 120px 0;
+    @include breakpoint("max-sm") {
+        padding: 60px 0;
+    }
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        gap: 0 40px;
+        justify-content: space-between;
+        @include breakpoint("max-md") {
+            grid-template-columns: repeat(2 , 1fr);
+            gap: 40px;
+        }
+        @include breakpoint("max-md") {
+            grid-template-columns: repeat(1 , 1fr);
+            gap: 20px;
+        }
+        .card-grid-items {
+            border: 1px solid $red;
+            cursor: pointer;
+            .button-style {
+                margin: 1rem 0 0 0;
+                button {
+                    // @include medium-button;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 0px;
+                }
+            }
+            .card-details {
+                padding: 1.25rem;
+                .department-alignment {
+                    padding-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+                    .col-direction {
+                        padding-right: 40px;
+                    }
+                    div {
+                        .icon-text-alignment {
+                            display: flex;
+                            align-items: center;
+                        }
+                        p {
+                            @include text-bold;
+                            font-weight: 500;   
+                            font-family: "Gotham-Book_0";
+                            margin: 0 0 8px 0;
+                            color: $black;
+                        }
+
+
+                        
+
+
+                        
+                        span {
+                            display: block;
+                            @include text-sm;
+                            font-weight: 500;
+                            color: $red;
+                            padding-left: 8px;
+                            font-family: "Gotham-Book_0";
+                        }
+                    }
+                }
+                .child-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4 , 1fr);
+                    gap: 0 20px;
+                    justify-content: space-between;
+                    @include breakpoint("max-md") {
+                        grid-template-columns: repeat(2 , 1fr);
+                        gap: 20px;
+                    }
+                    .child-grid-items:last-child {
+                        border: none;
+                    }
+                    .child-grid-items {
+                        border-right: 1px solid $red;
+                        h5 {
+                            @include text-bold;
+                            font-weight: 600;
+                            font-size: 10px;
+                            color: $black-3;
+                            text-align: center;
+                            font-family: "Gotham-Book_0";
+                            margin: 0 0 0px 0;
+                            @include breakpoint("max-md") {
+                                text-align: left;
+                                font-size: 16px;
+                            }
+                        }
+                        span {
+                            text-align: center;
+                            display: block;
+                            @include text-sm;
+                            color: $red;
+                            font-family: "Gotham-Book_0";
+                            font-size: 8px;
+                            @include breakpoint("max-md") {
+                                text-align: left;
+                                font-size: 12px;
+                            }
+                        }
+
+                    }
+
+                }
+                h2 {
+                    @include heading-4;
+                    font-family: "Gotham-Book_0";
+                    margin: 1rem 0 1.85rem 0;
+                    color: $black;
+                    overflow: hidden;
+                    font-size: 15px;
+                    height: 81px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+                .location-text-alignment {
+                    display: flex;
+                    align-items: center;
+                    div {
+                        display: flex;
+                        align-items: center;
+                        i {
+                            color: $red;
+                            font-size: 18px;
+                        }
+                        span {
+                            display: block;
+                            padding-left: 1rem;
+                            @include text-bold;
+                            font-family: "Gotham-Book_0";
+                            color:#777;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                        }
+                    }
+                }
+            }
+            .card-images {
+                img {
+                    width: 100%;
+                    height: 210px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+.near-by-title {
+    padding-bottom: 60px;
+    h2 {
+        margin: 0;
+        @include heading-3;
+        color: $black;
+        font-family: "Gotham-Book_0";
+        font-weight: bold;
+    }
+}
+
+.sticky-section {
+    position: sticky;
+    top: 90px;
+}
+
+.faq-section-bottom-alignment {
+    padding: 0 0 100px 0;
+}
+
+
+.faqSectionAlignmentDesign {
+    color: #777 !important;
+    font-weight: 500 !important;
+    padding-left: 20px !important;
+    color: #323232 !important;
+}
+
+.answer-text-design {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    padding-left: 20px !important;
+    
+}

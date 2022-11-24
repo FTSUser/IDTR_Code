@@ -1,0 +1,163 @@
+
+@import './styles/mixins/breakpoint.scss';
+@import './styles/mixins/color.scss';
+@import './styles/mixins/font.scss';
+@import './styles/mixins/typography.scss';
+
+
+.register-page-alignment {
+  .breadcrumbs-alignment {
+    /* Style the list */
+    ul.breadcrumb {
+      display: flex;
+      padding: 10px 16px;
+      list-style: none;
+      background: rgba(204, 0, 1, 0.04);
+    }
+
+    /* Display list items side by side */
+    ul.breadcrumb li {
+      display: inline;
+      @include text-sm;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+    }
+
+    /* Add a slash symbol (/) before/behind each list item */
+    ul.breadcrumb li + li:before {
+      padding: 8px;
+      color: black;
+      content: "/\00a0";
+    }
+
+    /* Add a color to all links inside the list */
+    ul.breadcrumb li a {
+      color: $gray;
+      text-decoration: none;
+    }
+
+    /* Add a color on mouse-over */
+    ul.breadcrumb li a:hover {
+      color: $red;
+    }
+  }
+  .page-title-alignment {
+      padding: 40px 0 60px 0;
+      @include breakpoint("max-md") {
+        padding: 40px;
+      }
+      @include breakpoint("max-sm") {
+        padding: 20px;
+      }
+      h1 {
+          margin: 0;
+          @include heading-2;
+          color: $black;
+          @include breakpoint("max-md") {
+            @include heading-3;
+          }
+          @include breakpoint("max-sm") {
+            @include heading-3;
+            line-height: 35px;
+          }
+      }
+  }
+  .tab-design {
+    padding-bottom: 2rem;
+    @include breakpoint("max-md") {
+      padding: 0 40px;
+    }
+    @include breakpoint("max-sm") {
+      padding: 0 20px;
+      margin: 20px 0 0 0;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      border-bottom: 1px solid $input-boder-color;
+      list-style: none;
+      padding-bottom: 1rem;
+      align-items: center;
+      @include breakpoint("max-sm") {
+        overflow-x: scroll;
+        overflow-Y: hideen;
+      }
+      li {
+        margin-right: 40px;
+        @include text;
+        cursor: pointer;
+        color: $gray;
+        position: relative;
+        @include breakpoint("max-sm") {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .tab-active::before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    bottom: -18px;
+    left: 0;
+    background-color: $red;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  }
+}
+
+.first-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 0;
+  border-bottom: 1px solid #131313;
+}
+
+.sec-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 0;
+}
+
+.first-grid-items {
+  padding: 0 0 8px 0;
+}
+
+.three-grid {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 10px;
+  align-items: center;
+}
+table.new-table-design,
+.new-table-design th,
+.new-table-design td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.new-table-design-style th,
+.new-table-design-style td {
+  padding: 12px;
+}
+
+.new-table-design-style th {
+  font-size: 13px;
+  line-height: 16px;
+  color: #000;
+}
+
+.new-table-design-style td {
+  font-size: 13px;
+  line-height: 16px;
+  color: #000;
+}
+
+.thee-col-alignment {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+  border: 1px solid;
+  padding: 20px;
+}
